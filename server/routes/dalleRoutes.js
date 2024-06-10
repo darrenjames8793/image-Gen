@@ -28,7 +28,7 @@ router.route('/').post( async (req,res) => {
         const fetchImg = async () => {
             try {
                 
-                const result = await axios.get(`https://api.unsplash.com/search/photos?query=${prompt}&page=1&per_page=1&client_id=${process.env.API_KEY}`);
+                const result = await axios.get(`https://api.unsplash.com/search/photos?query=${prompt}&page=4&per_page=20&client_id=${process.env.API_KEY}`);
                 
                 imgLink = result.data.results[0].urls.regular;
                 
