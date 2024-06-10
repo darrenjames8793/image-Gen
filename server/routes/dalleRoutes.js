@@ -29,7 +29,7 @@ router.route('/').post( async (req,res) => {
             let num = Math.floor(Math.random() * (20- 1 + 1)) + 1;
             try {
                 
-                const result = await axios.get(`https://api.unsplash.com/search/photos?query=${prompt}&page=1&per_page=1&client_id=${process.env.API_KEY}`);
+                const result = await axios.get(`https://api.unsplash.com/search/photos?query=${prompt}&page=${num}&per_page=1&client_id=${process.env.API_KEY}`);
                 
                 imgLink = result.data.results[0].urls.regular;
                 
